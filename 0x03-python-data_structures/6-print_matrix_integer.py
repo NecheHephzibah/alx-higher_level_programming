@@ -1,11 +1,8 @@
 #!/usr/bin/python3
 
 def print_matrix_integer(matrix=[[]]):
-    if not matrix or not all(matrix):
-        return
-
-    for row in matrix:
-        for i in range(len(row)):
-
-            print("{:d}".format(row[i]), end=" ")
-        print()
+    if matrix:
+        for row in matrix:
+            for inner_row in row:
+                print("{:d}".format(inner_row), end=" " if inner_row != row[-1] else "")
+            print()
