@@ -5,7 +5,7 @@ def to_subtract(list_num):
 
     for i in list_num:
         if max_list > i:
-            subtract =+ i
+            subtract = subtract + i
 
     return (max_list - subtract)
 
@@ -39,4 +39,3 @@ def roman_to_int(roman_string):
     number += to_subtract(list_num)
 
     return number
-
