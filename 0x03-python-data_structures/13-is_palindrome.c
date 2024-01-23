@@ -34,11 +34,11 @@ int is_palindrome(listint_t **head)
 	if (length % 2 != 0 && length != 1)
 	{
 		middle = middle->next;
-		length = length -i;
+		length = length - 1;
 	}
 	reversal(&middle);
 	i = list_compare(*head, middle, length);
-	return (1);
+	return (i);
 
 }
 
