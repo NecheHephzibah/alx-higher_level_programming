@@ -8,9 +8,7 @@ def list_division(my_list_1, my_list_2, list_length):
                 raise IndexError("out of range")
             # Try to perform the division
             try:
-                element_1 = float(my_list_1[i])
-                element_2 = float(my_list_2[i])
-                result = element_1 / element_2
+                result = my_list_1[i] / my_list_2[i]
                 result_list.append(result)
             except ZeroDivisionError:
                 print("division by 0")
