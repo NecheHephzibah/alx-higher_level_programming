@@ -3,10 +3,10 @@ def list_division(my_list_1, my_list_2, list_length):
     result_list = []
     try:
         for i in range(list_length):
-#check if both list have enough elements
+            # check if both list have enough elements
             if i >= len(my_list_1) or i >= len(my_list_2):
                 raise IndexError("out of range")
-# Try to perform the division
+            # Try to perform the division
             try:
                 result = my_list_1[i] / my_list_2[i]
                 result_list.append(result)
