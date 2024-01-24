@@ -5,10 +5,8 @@ def safe_print_integer(value):
         return True
     except (ValueError, TypeError):
         return False
-
-
-
-#if isinstance(value, int) and (value >= 0
+##
+#       if isinstance(value, int) and (value >= 0
 #                      and value <= 9 or value < 0):
 #           print("{:d}".format(value))
 #           return True
@@ -17,3 +15,4 @@ def safe_print_integer(value):
 #    except TypeError as exc:
 #       print("{}".format(exc))
 #       return False
+#
