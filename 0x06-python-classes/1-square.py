@@ -3,7 +3,6 @@
 """This comment defines a class Square."""
 
 
-
 class Square:
     """This class depicts a square wit size attribute."""
 
