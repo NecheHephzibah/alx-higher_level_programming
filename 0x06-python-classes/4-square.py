@@ -2,6 +2,7 @@
 
 """This comment defines a class Square."""
 
+
 class Square:
     """This class depicts a square wit size attribute."""
 
@@ -11,7 +12,7 @@ class Square:
         Args:
             size (int): The size of the square.
         """
-        self.size = size	
+        self.size = size
 
     @property
     def size(self):
@@ -26,7 +27,6 @@ class Square:
         elif value < 0:
             raise ValueError("size must be >= 0")
         self.__size = value
-
 
     def area(self):
         """Returns the area of a square."""

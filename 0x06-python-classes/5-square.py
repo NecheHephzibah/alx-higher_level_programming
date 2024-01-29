@@ -2,6 +2,7 @@
 
 """This comment defines a class Square."""
 
+
 class Square:
     """This class depicts a square wit size attribute."""
 
@@ -27,13 +28,12 @@ class Square:
             raise ValueError("size must be >= 0")
         self.__size = value
 
-
     def area(self):
         """Returns the area of a square."""
         return (self.__size * self.__size)
 
     def my_print(self):
-        """Prints the square using #""" 
+        """Prints the square using #"""
         if self.__size == 0:
             print()
         else:
