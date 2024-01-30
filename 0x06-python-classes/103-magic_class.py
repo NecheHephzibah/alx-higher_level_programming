@@ -8,6 +8,13 @@ class MagicClass:
     """Defines a Circle"""
 
     def __init__(self, radius=0):
+        """Initialize MagicClass.
+
+
+        Arg:
+            radius (float or int): The radius of the MagicClass(circle).
+        """
+
         self.__radius = 0
         if type(radius) is not int and type(radius) is not float:
             raise TypeError("radius must be a number")
