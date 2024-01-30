@@ -57,7 +57,7 @@ class SinglyLinkedList:
             value (Node): the new node to insert.
         """
         new = Node(value)
-        if self.head is None:
+        if self.__head is None:
             new.next_node = None
             self.__head = new
         elif self.__head.data > value:
@@ -71,7 +71,7 @@ class SinglyLinkedList:
             new.next_node = temp.next_node
             temp.next_node = new
 
-    def __printn__(self):
+    def __str__(self):
         """Defines the print method for the singly linked list"""
         list_val = []
         temp = self.__head
