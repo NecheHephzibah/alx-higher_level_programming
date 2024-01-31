@@ -1,9 +1,10 @@
 #!/usr/bin/python3
 """File contains a class named Rectangle"""
 
+
 class Rectangle:
     """Represents a Rectangle, sort of an empty class"""
-    
+
     def __init__(self, width=0, height=0):
         """Initialize a new Rectangle.
 
