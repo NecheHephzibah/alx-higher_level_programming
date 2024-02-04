@@ -5,17 +5,16 @@
 class LockedClass:
     """Defines the class LockedClass"""
 
-    __slots__ = ['first_name']
+    __slots__ = ['_first_name']
 
     def __init__(self):
         """Initializes the class"""
         self.first_name = None
 
-    def __setattr__(self, name, value):
-        """Overiides the default setattr behaviour"""
-        if name != 'first_name':
-            raise AttributeError("'LockedClass' object has no attribute '{}'"
-                                 .format(name))
-        else:
-            self.__dict__[name] = value
+    @property
+    def first_name(self):
+        return self._first_name
 
+    @first_name.setter
+    def first_name(self, value):
+        self._first_name = value
