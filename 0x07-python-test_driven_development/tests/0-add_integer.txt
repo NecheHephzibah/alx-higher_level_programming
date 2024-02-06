@@ -1,96 +1,79 @@
 """This module define a function that adds two numbers
-``add_integer(a, b=98)``."""
+add_integer(a, b=98)."""
 
 Usage
 -----
 
-``add_integer(a, b=98)`` returns the addition of its two arguments.
+"""add_integer(a, b=98) returns the addition of its two arguments."""
 
-::
-
->>> add_integer = __import__('0-add_integer').add_integer
->>> add_integer(2, 3)
+>> > add_integer = __import__('0-add_integer').add_integer
+>> > add_integer(2, 3)
 5
-
-::
-
->>> add_integer(2, -3)
+>> > add_integer(2, -3)
 -1
-
-::
-
->>> add_integer(2.3, 3)
+>> > add_integer(2.3, 3)
 5
-
-::
-
->>> add_integer(2)
+>> > add_integer(2)
 100
-
-::
-
->>> add_integer(-2.4, -0.4)
+>> > add_integer(-2.4, -0.4)
 -2
-
-::
-
->>> add_integer(2.4, 3.4)
+>> > add_integer(2.4, 3.4)
 5
-
-::
-
->>> add_integer(2.3, -2)
+>> > add_integer(2.3, -2)
 0
 
 Non-Numbers
 -----------
 
-The `add_integer()` expects that both arguments are either integers or floats. If either argument is a non-integer and a non-float, a `TypeError` is raised:
+"""
+The add_integer() expects that both arguments are either integers or floats.
+If either argument is a non-integer and a non-float, a TypeError is raised:
+"""
 
 1.
 
->>> add_integer("john", 2)
-Traceback (most recent call last):
-TypeError: a must be an integer
+>> > add_integer("john", 2)
+Traceback(most recent call last):
+    TypeError: a must be an integer
 
 2.
 
->>> add_integer(2, "john")
-Traceback (most recent call last):
-TypeError: b must be an integer
+>> > add_integer(2, "john")
+Traceback(most recent call last):
+    TypeError: b must be an integer
 
 3.
 
->>> add_integer("john", None)
-Traceback (most recent call last):
-TypeError: a must be an integer
+>> > add_integer("john", None)
+Traceback(most recent call last):
+    TypeError: a must be an integer
 
 4.
 
->>> add_integer(3.8, None)
-Traceback (most recent call last):
-TypeError: b must be an integer
+>> > add_integer(3.8, None)
+Traceback(most recent call last):
+    TypeError: b must be an integer
 
 5.
 
->>> add_integer(3, float('inf'))
-Traceback (most recent call last):
-OverflowError: cannot convert float infinity to integer
+>> > add_integer(3, float('inf'))
+Traceback(most recent call last):
+    OverflowError: cannot convert float infinity to integer
 
 6.
 
->>> add_integer(3, float('nan'))
-Traceback (most recent call last):
-ValueError: cannot convert float NaN to integer
+>> > add_integer(3, float('nan'))
+Traceback(most recent call last):
+    ValueError: cannot convert float NaN to integer
 
 7.
 
->>> add_integer(float('inf'))
-Traceback (most recent call last):
-OverflowError: cannot convert float infinity to integer
+>> > add_integer(float('inf'))
+Traceback(most recent call last):
+    OverflowError: cannot convert float infinity to integer
 
 8.
 
->>> add_integer(float('nan'))
-Traceback (most recent call last):
-ValueError: cannot convert float NaN to integer
+>> > add_integer(float('nan'))
+Traceback(most recent call last):
+    ValueError: cannot convert float NaN to integer
