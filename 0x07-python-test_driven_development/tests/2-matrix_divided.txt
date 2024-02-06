@@ -1,0 +1,61 @@
+The ``2-matrix_divided`` module
+===============================
+
+Using ``matrix_divided``
+========================
+
+Import module:
+    >>> matrix_divided = __import__('2-matrix_divided').matrix_divided
+
+Test normal matrix:
+    >>> matrix_divided([[2, 4, 6], [1, 2, 3]], 2)
+    [[1.0, 2.0, 3.0], [0.5, 1.0, 1.5]]
+
+Test negative element:
+    >>> matrix_divided([[3, 8, -6], [2, -4, 8]], 3)
+    [[1.0, 2.67, -2.0], [0.67, -1.33, 2.67]]
+
+Test for negative division:
+    >>> matrix_divided([[3, 6, 9], [27, 3, 2]], -3)
+    [[-1.0, -2.0, -3.0], [-9.0, -1.0, -0.67]]
+
+Test for only one element:
+    >>> matrix_divided([[9]], 3)
+    [[3.0]]
+
+Test for elements that are not numbers:
+    >>> matrix_divided([[3, 6, 9], [27, 3, 3]], float('nan'))
+    [[nan, nan, nan], [nan, nan, nan]]
+
+Test for matrix that goes to infinity:
+    >>> matrix_divided([[3, 6, 9], [27, 3, 3]], float('inf'))
+    [[0.0, 0.0, 0.0], [0.0, 0.0, 0.0]]
+
+Test for zero division:
+    >>> matrix_divided([[2, 4, 6], [1, 2, 3]], 0)
+    Traceback (most recent call last):
+    ...
+    ZeroDivisionError: division by zero
+
+Test for matrix with non-number:
+    >>> matrix_divided([[3, 6, 9], [27, 3, 'a']], 3)
+    Traceback (most recent call last):
+    ...
+    TypeError: matrix must be a matrix(list of lists) of int/float
+
+Test for incomplete matrix:
+    >>> matrix_divided([[9, 27, 35], [9, 3]], 3)
+    Traceback (most recent call last):
+    ...
+    TypeError: Each row of the matrix must have the same size
+
+Test matrix when the first argument isn't inputted:
+    >>> matrix_divided([none, [9, 3]], 3)
+    Traceback (most recent call last):
+    ...
+    NameError: name 'none' is not defined
+
+Test empty matrix:
+    >>> matrix_divided([[]], 3)
+    [[]]
+    
