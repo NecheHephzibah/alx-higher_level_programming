@@ -1,0 +1,54 @@
+The ``3-say_my_name`` module
+============================
+
+Using ``say_my_name``
+=====================
+
+Import function from module:
+    >>> say_my_name = __import__('3-say_my_name').say_my_name
+
+Test the function normally:
+    >>> say_my_name("Judge", "Judy")
+    My name is Judge Judy
+
+Test for roman numero:
+    >>> say_my_name("Cornelius Maxwell", "Jones II")
+    My name is Cornelius Maxwell Jones II
+
+Test for only one string:
+    >>> say_my_name("Kimberly")
+    My name is Kimberly
+
+Invalid Names
+=============
+
+
+Test for int in first arg:
+    >>> say_my_name(12, "bark")
+    Traceback (most recent call last):
+    ...
+    TypeError: first_name must be a string
+
+Test for when None is passed:
+    >>> say_my_name(None)
+    Traceback (most recent call last):
+    ...
+    TypeError: first_name must be a string
+
+Test for missing arguments:
+    >>> say_my_name()
+    Traceback (most recent call last):
+    ...
+    TypeError: say_my_name() missing 1 required positional argument: 'first_name'
+
+Test for when a list is passed:
+    >>> say_my_name("Michael", ["Cody", "Ethel", "Austin"])
+    Traceback (most recent call last):
+    ...
+    TypeError: last_name must be a string
+
+Test for first arg being a dictionary:
+    >>> say_my_name({"Adam": 3, "Mae": 15}, 4.3)
+    Traceback (most recent call last):
+    ...
+    TypeError: first_name must be a string
