@@ -1,0 +1,77 @@
+The ``5-text_indentation`` module
+=================================
+
+
+Using ``text_indentation``
+--------------------------
+
+
+Import function from module:
+    >>> text_indentation = __import__('5-text_indentation').text_indentation
+
+
+Test function normally:
+    >>> text_indentation("Holberton. School month in june: This Summer?")
+    Holberton.
+    <BLANKLINE>
+    School month in june:
+    <BLANKLINE>
+    This Summer?
+    <BLANKLINE>
+
+Test function with spaces after delimiter:
+    >>> text_indentation("Holberton.   School:    Summer?   ")
+    Holberton.
+    <BLANKLINE>
+    School:
+    <BLANKLINE>
+    Summer?
+    <BLANKLINE>
+
+Test functions with spaces before delimiter:
+    >>> text_indentation("Holberton   .School   :Summer  ?")
+    Holberton.
+    <BLANKLINE>
+    School:
+    <BLANKLINE>
+    Summer?
+    <BLANKLINE>
+
+Test just delimeters:
+    >>> text_indentation(" .    :   ?")
+    .
+    <BLANKLINE>
+    :
+    <BLANKLINE>
+    ?
+    <BLANKLINE>
+
+Test inputted new lines:
+    >>> text_indentation("Holberton\n. School\n month in june\n: This Summer?")
+    Holberton
+    .
+    <BLANKLINE>
+    School
+     month in june
+    :
+    <BLANKLINE>
+    This Summer?
+    <BLANKLINE>
+
+Test function with numbers:
+    >>> text_indentation(33)
+    Traceback (most recent call last):
+    ...
+    TypeError: text must be a string
+
+Test function with none:
+    >>> text_indentation(None)
+    Traceback (most recent call last):
+    ...
+    TypeError: text must be a string
+
+Test function when nothing is passed to it:
+    >>> text_indentation()
+    Traceback (most recent call last):
+    ...
+    TypeError: text_indentation() missing 1 required positional argument: 'text'
