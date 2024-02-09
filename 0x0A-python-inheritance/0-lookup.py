@@ -3,15 +3,14 @@
 
 
 def lookup(obj):
-	"""
-	Defines a method that returns available attributes and
-	methods of an object.
+    """
+    Defines a method that returns available attributes and
+    methods of an object.
 
-	Args:
-		obj (class): passes in the object to be printd.
+    Args:
+        obj (class): passes in the object to be printd.
 
-	Returns:
-		list of attributes and methods of an object.
-	"""
-
-	return dir(obj)
+    Returns:
+        list of attributes and methods of an object.
+    """
+    return dir(obj)
