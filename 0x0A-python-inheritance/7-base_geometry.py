@@ -6,6 +6,8 @@
 class BaseGeometry:
     """Defines a class BaseGeometry"""
 
+    def __init__(self)
+
     def area(self):
         """Defines a public method instance"""
         raise Exception("area() is not implemented")
@@ -20,6 +22,9 @@ class BaseGeometry:
             TypeError: If value is not an integer.
             ValueError: If value is <= 0.
         """
+        self.name = name
+        self.value = value
+
         if type(value) != int:
             raise TypeError("{} must be an integer".format(name))
         if value <= 0:
