@@ -36,10 +36,10 @@ class Rectangle(BaseGeometry):
             width (int): The width of the new Rectangle.
             height (int): The height of the new Rectangle.
         """
-        self.integer_validator("width", width)
+        super().integer_validator("width", width)
         self.__width = width
 
-        self.integer_validator("height", height)
+        super().integer_validator("height", height)
         self.__height = height
 
     def area(self):
@@ -48,7 +48,11 @@ class Rectangle(BaseGeometry):
 
     def __str__(self):
         """Defines the string representation of the object"""
-        return f"[Rectangle] {self.__width}/{self.__height}"
+        string = "[" + str(self.__class__.__name__) + "]"
+
+        string += str(self.__width) + "/" + str(self.__height)
+
+        return string
 
 
 class Square(Rectangle):
