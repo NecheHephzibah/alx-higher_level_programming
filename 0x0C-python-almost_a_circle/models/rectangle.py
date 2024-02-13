@@ -19,7 +19,7 @@ class Rectangle(Base):
             id (int): The id of the rectangle.
         """
         super().__init__(id)
-        self.__width =  width
+        self.__width = width
         self.__height = height
         self.__x = x
         self.__y = y
@@ -97,8 +97,9 @@ class Rectangle(Base):
 
     def __str__(self):
         """Defines the string representation of the Rectangle subclass"""
-        return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id,\
-self.__x, self.__y, self.__width, self.__height)
+        return ("[Rectangle] ({}) {}/{} - {}/{}"
+                .format(self.id, self.__x, self.__y, self.__width,
+                        self.__height))
 
     def update(self, *args):
         """Assigns an argument to each attribute"""
