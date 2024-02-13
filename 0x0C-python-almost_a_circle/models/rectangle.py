@@ -73,13 +73,38 @@ class Rectangle(Base):
         self.__y = value
 
     def area(self):
+        """
+        Defines the area of the rectangle.
+
+        Returns:
+            The area of the rectangle.
+        """
         return self.__width * self.__height
 
     def display(self):
+        """Prints the Rectangle instance with the character "#" to stdout"""
         if self.__width == 0 or self.__height == 0:
             return ""
-        for i in range(0, self.__height):
-            for j in range(self.__width):
-                print("#", end="")
-            if i != self.__height - 1:
-                print("\n")
+        for i in range(self.__y):
+            print()
+
+        for i in range(self.__height):
+            # Print spaces for x-coordinate offset
+            print(" " * self.__x, end="")
+
+            # print '#' for the width of the rectangle
+            print("#" * self.__width)
+
+    def __str__(self):
+        """Defines the string representation of the Rectangle subclass"""
+        return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id,\
+self.__x, self.__y, self.__width, self.__height)
+
+    def update(self, *args):
+        """Assigns an argument to each attribute"""
+        if len(args) > 0:
+            self.id = args[0] if len(args) >= 1 else self.id
+            self.__width = args[1] if len(args) >= 2 else self.__width
+            self.__height = args[2] if len(args) >= 3 else self.__height
+            self.__x = args[3] if len(args) >= 4 else self.__x
+            self.__y = args[4] if len(args) >= 5 else self.__y
