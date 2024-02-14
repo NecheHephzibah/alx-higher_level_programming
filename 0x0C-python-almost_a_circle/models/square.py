@@ -75,8 +75,8 @@ class Square(Rectangle):
             The dictionary representation of the sub-subclass Square.
         """
         return {
-            'id' : self.id,
-            'size' : self.width,
-            'x' : self.x,
-            'y' : self.y
+            'id': self.id,
+            'size': self.width,
+            'x': self.x,
+            'y': self.y
         }
