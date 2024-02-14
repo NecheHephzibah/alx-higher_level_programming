@@ -44,7 +44,7 @@ class Square(Rectangle):
 
     def update(self, *args, **kwargs):
        if len(args):
-           for i, arg enumerate(args):
+           for i, arg in enumerate(args):
                if i == 0:
                    self.id = arg
                if i == 1:
@@ -53,13 +53,13 @@ class Square(Rectangle):
                    self.x = arg
                if i == 3:
                    self.y = arg
-        else:
-             if "id" in kwargs:
-                 self.id = kwargs["id"]
-             elif "size" in kwargs:
-                 self.width = kwargs["size"]
-             elif "x" in kwargs:
-                 self.x = kwargs["x"]
-             elif "y" in kwargs:
-                 self.y = kwargs["y"]   
+       else:
+           if "id" in kwargs:
+               self.id = kwargs["id"]
+           elif "size" in kwargs:
+               self.width = kwargs["size"]
+           elif "x" in kwargs:
+               self.x = kwargs["x"]
+           elif "y" in kwargs:
+               self.y = kwargs["y"]   
 
