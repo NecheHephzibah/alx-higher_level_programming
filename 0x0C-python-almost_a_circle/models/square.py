@@ -64,8 +64,8 @@ class Square(Rectangle):
         else:
             if "id" in kwargs:
                 self.id = kwargs["id"]
-            elif "width" in kwargs:
-                self.width = kwargs["width"]
+            elif "size" in kwargs:
+                self.size = kwargs["size"]
             elif "x" in kwargs:
                 self.x = kwargs["x"]
             elif "y" in kwargs:
