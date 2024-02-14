@@ -66,3 +66,17 @@ class Square(Rectangle):
             self.width = kwargs.get('size', self.width)
             self.x = kwargs.get('x', self.x)
             self.y = kwargs.get('y', self.y)
+
+    def to_dictionary(self):
+        """
+        Defines the dictionary representation of the sub-subclass Square.
+
+        Returns:
+            The dictionary representation of the sub-subclass Square.
+        """
+        return {
+            'id' : self.id,
+            'size' : self.width,
+            'x' : self.x,
+            'y' : self.y
+        }

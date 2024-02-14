@@ -101,7 +101,7 @@ class Rectangle(Base):
 
     def update(self, *args, **kwargs):
         """
-        Assigns an argument to each attribute.
+        Assign an argument to each attribute.
 
         Args:
             *args (positional argument): assigns argument variables by index.
@@ -120,3 +120,19 @@ class Rectangle(Base):
             self.__height = kwargs.get('height', self.__height)
             self.__x = kwargs.get('x', self.__x)
             self.__y = kwargs.get('y', self.__y)
+
+    def to_dictionary(self):
+        """
+        Defines a diction representation of the subclass Rectangle.
+
+        Returns:
+            The dictionary representation of a Rectangle.
+        """
+
+        return {
+            'id' : self.id,
+            'width' : self.__width,
+            'height' : self.__height,
+            'x' : self.__x,
+            'y' : self.__y
+        }
