@@ -18,11 +18,11 @@ class Rectangle(Base):
             y (int): The y-coordinate of the top-left corner of the rectangle.
             id (int): The id of the rectangle.
         """
+        self.width = width
+        self.height = height
+        self.x = x
+        self.y = y
         super().__init__(id)
-        self.__width = width
-        self.__height = height
-        self.__x = x
-        self.__y = y
 
     @property
     def width(self):
@@ -83,8 +83,6 @@ class Rectangle(Base):
 
     def display(self):
         """Prints the Rectangle instance with the character "#" to stdout"""
-        if self.__width == 0 or self.__height == 0:
-            return ""
         for i in range(self.__y):
             print()
 
@@ -117,8 +115,8 @@ class Rectangle(Base):
             self.__x = args[3] if len(args) >= 4 else self.__x
             self.__y = args[4] if len(args) >= 5 else self.__y
         else:
-            self.id = kwargs.get("id", self.id)
-            self.__width = kwargs.get("width", self.__width)
-            self.__x = kwargs.get("x", self.__x)
-            self.__height = kwargs.get("height", self.__height)
-            self.__y = kwargs.get("y", self.__y)
+            self.id = kwargs.get('id', self.id)
+            self.__width = kwargs.get('width', self.__width)
+            self.__height = kwargs.get('height', self.__height)
+            self.__x = kwargs.get('x', self.__x)
+            self.__y = kwargs.get('y', self.__y)
