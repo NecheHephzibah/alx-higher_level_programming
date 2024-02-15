@@ -21,7 +21,7 @@ class Base:
 
     @staticmethod
     def to_json_string(list_dictionaries):
-        """Defines a static method"""
+        """Defines a static method, that converts dictionaries to json str"""
 
         if list_dictionaries is None:
             return "[]"
@@ -39,7 +39,7 @@ class Base:
         Returns:
             None
         """
-        filename =  cls.__name__ + '.json'
+        filename = cls.__name__ + '.json'
         if list_objs is None:
             list_objs = []
 
@@ -52,8 +52,8 @@ class Base:
     def from_json_string(json_string):
         """Returns the list of the JSON representation json_string"""
 
-        if json_string is None or json_string is []:
-            json_string = []
+        if json_string is None or json_string == []:
+            return []
         return json.loads(json_string)
 
     @classmethod
@@ -62,8 +62,17 @@ class Base:
         Returns an instance with all attributes already set.
 
         Args:
-            **dictionary (pointer): Double pointer to a dictionary.
+            **dictionary (dict): Dictionary containing attribute values.
 
         Returns:
             An instance with all attributes already set.
         """
+        if cls.__name__ == 'Rectangle':
+            dummy_instance = cls(1, 1)
+        elif cls.__name__ == 'Square':
+            dummy_instance = cls(1)
+        else:
+            return None
+
+        dummy_instance.update(**dictionary)
+        return dummy_instance

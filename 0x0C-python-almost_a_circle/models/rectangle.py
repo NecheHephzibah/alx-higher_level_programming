@@ -101,7 +101,7 @@ class Rectangle(Base):
 
     def update(self, *args, **kwargs):
         """
-        Assign an argument to each attribute.
+        Assign an attribute.
 
         Args:
             *args (positional argument): assigns argument variables by index.
