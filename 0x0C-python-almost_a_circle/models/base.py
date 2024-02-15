@@ -81,13 +81,6 @@ class Base:
    def load_from_file(cls):
        """Returns a list of instances"""
        filename = cls.__name__ + '.json'
-       if filename is None:
-           return []
-       with open(filename, "r") as f:
-           instance_list = cls.from_json_string(inst.create(**f))
-       return instance_list
-
-       filename = cls.__name__ + '.json'
        instance_list = []
 
        try:
