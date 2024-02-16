@@ -26,6 +26,7 @@ class Rectangle(Base):
 
     @property
     def width(self):
+        """Gets/Sets the width of a rectangle"""
         return self.__width
 
     @width.setter
@@ -79,19 +80,19 @@ class Rectangle(Base):
         Returns:
             The area of the rectangle.
         """
-        return self.__width * self.__height
+        return self.width * self.height
 
     def display(self):
         """Prints the Rectangle instance with the character "#" to stdout"""
-        for i in range(self.__y):
+        for i in range(self.y):
             print()
 
-        for i in range(self.__height):
+        for i in range(self.height):
             # Print spaces for x-coordinate offset
-            print(" " * self.__x, end="")
+            print(" " * self.x, end="")
 
             # print '#' for the width of the rectangle
-            print("#" * self.__width)
+            print("#" * self.width)
 
     def __str__(self):
         """Defines the string representation of the Rectangle subclass"""

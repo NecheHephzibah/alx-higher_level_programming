@@ -26,10 +26,6 @@ class Square(Rectangle):
 
     @size.setter
     def size(self, value):
-        if not isinstance(value, int):
-            raise TypeError("width must be an integer")
-        if value <= 0:
-            raise ValueError("width must be > 0")
         self.width = value
         self.height = value
 
@@ -51,21 +47,34 @@ class Square(Rectangle):
            **kwargs (keyword argument): assigns argument by their keys.
 
         """
-        if len(args):
-            for i, arg in enumerate(args):
+        if args and len(args) != 0:
+            i = 0
+            for arg in args:
                 if i == 0:
-                    self.id = arg
-                if i == 1:
-                    self.width = arg
-                if i == 2:
+                    if arg is None:
+                        self.__init__(self.size, self.x, self.y)
+                    else:
+                        self.id = arg
+                elif i == 1:
+                    self.size = arg
+                elif i == 2:
                     self.x = arg
-                if i == 3:
+                elif i == 3:
                     self.y = arg
-        else:
-            self.id = kwargs.get('id', self.id)
-            self.width = kwargs.get('size', self.width)
-            self.x = kwargs.get('x', self.x)
-            self.y = kwargs.get('y', self.y)
+                i += 1
+        elif kwargs and len(kwargs) != 0:
+            for n, v in kwargs.items():
+                if n == 'id':
+                    if v is None:
+                        self.__init__(self.size, self.x, self.y)
+                    else:
+                        self.id = v
+                elif n == 'size':
+                    self.size = v
+                elif n == 'x':
+                    self.x = v
+                elif n == 'y':
+                    self.y = v
 
     def to_dictionary(self):
         """

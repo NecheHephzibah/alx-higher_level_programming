@@ -2,6 +2,8 @@
 """Represents a module containing class called Base"""
 
 import json
+import csv
+from io import StringIO
 
 
 class Base:
@@ -52,7 +54,7 @@ class Base:
     def from_json_string(json_string):
         """Returns the list of the JSON representation json_string"""
 
-        if json_string is None or json_string == []:
+        if json_string is None or json_string == "[]":
             return []
         return json.loads(json_string)
 
@@ -94,3 +96,49 @@ class Base:
             pass
 
         return instance_list
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """
+        Writes the CSV representation of list_objs to a file.
+        CSV stands for  Comma Separated Values. It's a simple file 
+        format used to store tabular data, such a s a spreadsheet or database.
+
+        Args:
+            list_objs (list): A list of instances that inherit from Base.
+
+        Returns:
+            None
+        """
+        filename = cls.__name__ + '.csv'
+
+        with open(filename, "w") as f:
+            if list_objs is None or list_objs == []:
+                f.write("[]")
+            else:
+                if cls.__name__ == "Rectangle":
+                    fieldnames = ["id", "width", "height", "x", "y"]
+                else:
+                    fieldnames = ["id", "size", "x", "y"]
+                writer = csv.DictWriter(f, fieldnames=fieldnames)
+                for obj in list_objs:
+                    writer.writerow(obj.to_dictionary())
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """Loads data from a CSV file and returns a list of dictionaries."""
+        filename = cls.__name__ + '.csv'
+
+        try:
+            with open(filename, "r") as f:
+                if cls.__name__ == "Rectangle":
+                    fieldnames = ["id", "width", "height", "x", "y"]
+                else:
+                    fieldnames = ["id", "size", "x", "y"]
+
+                reader = csv.DictReader(f, fieldnames=fieldnames)
+                reader = [dict([row, int(v)] for row, v in diction.items())
+                                for diction in reader]
+                return [cls.create(**diction) for diction in reader]
+        except IOError:
+            return []
