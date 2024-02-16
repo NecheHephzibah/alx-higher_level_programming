@@ -8,6 +8,7 @@ import tkinter as TK
 import _tkinter
 from pathlib import Path
 
+
 class Base:
     """Defines a class Base"""
 
