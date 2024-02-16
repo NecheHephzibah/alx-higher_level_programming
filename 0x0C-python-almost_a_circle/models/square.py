@@ -5,7 +5,21 @@ from models.rectangle import Rectangle
 
 
 class Square(Rectangle):
-    """Defines the sub-subclass Square."""
+    """
+    Defines the sub-subclass Square.
+    Inherited Attribute:
+        id; width; height; x; y
+
+    Class Attributes:
+        size; x; y
+
+    Methods:
+        __init__(self, size, x=0, y=0, id=None)
+        size(self); size(self, value);
+        __str__(self)
+        update(self, *args, **kwargs);
+        to_dictionary(self)
+    """
 
     def __init__(self, size, x=0, y=0, id=None):
         """

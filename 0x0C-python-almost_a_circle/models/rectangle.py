@@ -5,7 +5,24 @@ from models.base import Base
 
 
 class Rectangle(Base):
-    """Defines the subclass Rectangle"""
+    """
+    Defines a subclass Rectangle that inherits from class Base.
+    Inherited Attributes:
+        id
+
+    Class Attributes:
+       width
+       height
+       x
+       y
+
+    Methods:
+        __init__(self, width, height, x=0, y=0, id=None):
+        update(self, *args, **kwargs);  width(self); width(self, value)
+        height(self); height(self, value); x(self); x(self, value)
+        y(self); y(self, value); area(self); display(self)
+        __str__; to_dictionary(self)
+    """
 
     def __init__(self, width, height, x=0, y=0, id=None):
         """
