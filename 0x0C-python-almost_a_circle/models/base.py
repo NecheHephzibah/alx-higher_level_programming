@@ -44,7 +44,12 @@ class Base:
 
     @staticmethod
     def to_json_string(list_dictionaries):
-        """Defines a static method, that converts dictionaries to json str"""
+        """
+        Defines a static method, that converts dictionaries to json str.
+
+        Args:
+            list_dictionaries (list): contains a list of all teh attributes.
+        """
 
         if list_dictionaries is None:
             return "[]"
@@ -73,7 +78,12 @@ class Base:
 
     @staticmethod
     def from_json_string(json_string):
-        """Returns the list of the JSON representation json_string"""
+        """
+        Returns the list of the JSON representation json_string.
+
+        Args:
+            json_string: passes json string back to object string.
+        """
 
         if json_string is None or json_string == "[]":
             return []
