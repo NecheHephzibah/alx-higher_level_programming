@@ -3,8 +3,10 @@
 
 import json
 import csv
-from io import StringIO
-
+import turtle
+import tkinter as TK
+import _tkinter
+from pathlib import Path
 
 class Base:
     """Defines a class Base"""
@@ -142,3 +144,69 @@ class Base:
                 return [cls.create(**diction) for diction in reader]
         except IOError:
             return []
+
+    @staticmethod
+    def draw(list_rectangles, list_squares):
+        """
+        Draws all the Rectangles and Squares graphically.
+
+        Args:
+            list_rectangles: a list or rectangles
+            list_squares: a list of squares
+        """
+
+        with turtle.Screen() as screen:
+            screen.setup(1200, 720)
+            fig = turtle.Turtle()
+
+            total_height = 0
+
+            if list_rectangles:
+                rec_width = list_rectangles[0].width * 2
+                rec_height = list_rectangles[0].height * 2
+                fig.begin_fill()
+                fig.color("pink", "purple")
+                fig.forward(rec_width)
+                fig.left(90)
+                fig.forward(rec_height)
+                fig.left(90)
+                fig.forward(rec_width)
+                fig.left(90)
+                fig.forward(rec_height)
+                fig.end_fill()
+                total_height += rec_height
+
+            if len(list_rectangles) > 1:
+                for rec in list_rectangles[1:]:
+                    rec_h = rec.height * 2
+                    rec_w = rec.width * 2
+                    fig.forward(rec_h)
+                    fig.left(90)
+
+                    fig.begin_fill()
+                    fig.color("Gold", "Maroon")
+                    fig.forward(rec_w)
+                    fig.left(90)
+                    fig.forward(rec_h)
+                    fig.left(90)
+                    fig.forward(rec_w)
+                    fig.left(90)
+                    fig.forward(rec_h)
+                    fig.end_fill()
+                    total_height += rec_h
+
+            for sq in list_squares:
+                sq_size = sq.width * 2
+                fig.right(180)
+                fig.forward(total_height)
+                fig.left(90)
+                fig.forward(50)
+
+                fig.begin_fill()
+                fig.color("#FFE5B4", "#B2BEB5")
+                for _ in range(4):
+                    fig.forward(sq_size)
+                    fig.left(90)
+                fig.end_fill()
+
+            turtle.done()
