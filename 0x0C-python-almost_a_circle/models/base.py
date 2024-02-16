@@ -101,7 +101,7 @@ class Base:
     def save_to_file_csv(cls, list_objs):
         """
         Writes the CSV representation of list_objs to a file.
-        CSV stands for  Comma Separated Values. It's a simple file 
+        CSV stands for  Comma Separated Values. It's a simple file
         format used to store tabular data, such a s a spreadsheet or database.
 
         Args:
@@ -138,7 +138,7 @@ class Base:
 
                 reader = csv.DictReader(f, fieldnames=fieldnames)
                 reader = [dict([row, int(v)] for row, v in diction.items())
-                                for diction in reader]
+                          for diction in reader]
                 return [cls.create(**diction) for diction in reader]
         except IOError:
             return []
