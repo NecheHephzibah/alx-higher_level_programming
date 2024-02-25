@@ -2,6 +2,7 @@
 
 """This module provides function that adds 2 integers"""
 
+
 def add_integer(a, b=98):
     """
     Calculate the sum of a and b.
@@ -25,7 +26,8 @@ def add_integer(a, b=98):
 
     a = int(a)
     b = int(b)
-    return  a + b
+    return a + b
+
 
 if __name__ == "__main__":
     import doctest
