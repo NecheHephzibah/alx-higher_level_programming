@@ -41,7 +41,7 @@ Test for matrix with non-number:
     >>> matrix_divided([[3, 6, 9], [27, 3, 'a']], 3)
     Traceback (most recent call last):
     ...
-    TypeError: matrix must be a matrix(list of lists) of int/float
+    TypeError: matrix must be a matrix(list of lists) of integers/floats
 
 Test for incomplete matrix:
     >>> matrix_divided([[9, 27, 35], [9, 3]], 3)
