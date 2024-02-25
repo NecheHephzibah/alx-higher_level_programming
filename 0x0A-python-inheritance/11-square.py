@@ -1,21 +1,17 @@
 #!/usr/bin/python3
-
-"""Represents a module containing a class BaseGeometry"""
-
+"""Defines a Rectangle subclass Square."""
 Rectangle = __import__('9-rectangle').Rectangle
 
 
 class Square(Rectangle):
-    """Defines a grandchild class that inherits from rectangle child class"""
+    """Represent a square."""
 
     def __init__(self, size):
-        """
-        Defines a method with size argument.
+        """Initialize a new square.
 
-        Arg:
-            size (int): The size of the square.
+        Args:
+            size (int): The size of the new square.
         """
-
         self.integer_validator("size", size)
         super().__init__(size, size)
         self.__size = size
