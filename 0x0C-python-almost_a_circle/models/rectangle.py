@@ -34,6 +34,11 @@ class Rectangle(Base):
             x (int): The x-coordinate of the top-left corner of the rectangle.
             y (int): The y-coordinate of the top-left corner of the rectangle.
             id (int): The id of the rectangle.
+        Raises:
+            TypeError: If either of width or height is not an int.
+            ValueError: If either of width or height <= 0.
+            TypeError: If either of x or y is not an int.
+            ValueError: If either of x or y < 0.
         """
         self.width = width
         self.height = height
@@ -112,7 +117,11 @@ class Rectangle(Base):
             print("#" * self.width)
 
     def __str__(self):
-        """Defines the string representation of the Rectangle subclass"""
+        """
+        Defines the string representation of the Rectangle subclass
+        returns: [Rectangle] (<id>) <x>/<y> - <width>/<height>
+
+        """
         return ("[Rectangle] ({}) {}/{} - {}/{}"
                 .format(self.id, self.__x, self.__y, self.__width,
                         self.__height))

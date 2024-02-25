@@ -33,7 +33,14 @@ class Base:
     __nb_objects = 0
 
     def __init__(self, id=None):
-        """Defines the class constructor"""
+        """
+        Initializes the base class, this class will be the 'Base' of all other
+        classes in the project. This helps to  manage id attributes for
+        all subclasses.
+
+        Args:
+            id (int): gives identity numberes and tracks all subclasses.
+        """
         if id is not None:
             self.id = id
         else:
@@ -49,6 +56,9 @@ class Base:
 
         Args:
             list_dictionaries (list): contains a list of all teh attributes.
+
+        Returns:
+            JSON string of the list of dictionaries.
         """
 
         if list_dictionaries is None:
@@ -63,9 +73,6 @@ class Base:
 
         Args:
             list_objs (list): A list of instances that inherit from Base.
-
-        Returns:
-            None
         """
         filename = cls.__name__ + '.json'
         if list_objs is None:
@@ -83,6 +90,7 @@ class Base:
 
         Args:
             json_string: passes json string back to object string.
+        Returns: an object.
         """
 
         if json_string is None or json_string == "[]":
