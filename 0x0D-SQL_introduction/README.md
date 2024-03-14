@@ -1,0 +1,1 @@
+This directory contains task on SQL. Structured Query Language (SQL) is actually the standard language for dealing with Relational Databases. It helps in optimizing and maintenance of databases, it is used to INSERT, SERACH, UPDATE and DELETE database records. For this task the focus is on Relational database.
