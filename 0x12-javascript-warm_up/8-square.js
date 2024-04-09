@@ -4,7 +4,9 @@ if (process.argv[2] === undefined ||
   console .log('Missing size');
 } else {
   const x = parseInt(process.argv[2]);
-  for (let i = 0; i < x; i++) {
+  let i = 0;
+  while (i < x) {
     console.log('X'.repeat(x));
+    i++;
   }
 }
