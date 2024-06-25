@@ -1,11 +1,20 @@
 #!/usr/bin/python3
-# script that lists all states from the database hbtn_0e_0_usa.
+"""
+Module that connects to a MySQL database and retrieves all rows
+from the states table.
+"""
+
 
 import sys
 import MySQLdb
 
 
 def main():
+    """
+    Main function that connects to the MySQL database, retrieves all rows
+    from the states table, and prints them.
+    """
+
     mysql_username = sys.argv[1]
     mysql_password = sys.argv[2]
     database_name = sys.argv[3]
