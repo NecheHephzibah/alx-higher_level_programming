@@ -1,51 +1,19 @@
 #!/usr/bin/python3
-"""
-Module that connects to a MySQL database takes in arguent and displays all
-values in the states table where name matches the argument.
-"""
+"""Filters states by User Input"""
 
-
-import sys
 import MySQLdb
-
-
-def main():
-    """
-    Main function that connects to the MySQL database, and displays all
-    values in the states table where name matches the argument.
-    """
-    mysql_username = sys.argv[1]
-    mysql_password = sys.argv[2]
-    database_name = sys.argv[3]
-    state_name_searched = sys.argv[4]
-
-    # Connect to the database
-    db = MySQLdb.connect(
-        host="localhost",
-        port=3306,
-        user=mysql_username,
-        passwd=mysql_password,
-        db=database_name,
-    )
-
-    # Create a cursor object
-    cursor = db.cursor()
-
-    # Execute the SQL query
-    query = "SELECT id, name FROM states WHERE name = %s ORDER BY id ASC"
-    cursor.execute(query, (state_name_searched,))
-
-    # Fetch all the rows
-    rows = cursor.fetchall()
-
-    # Print the rows
-    for row in rows:
-        print(row)
-
-    # Close the cursor and the connection
-    cursor.close()
-    db.close()
-
+from sys import argv
 
 if __name__ == "__main__":
-    main()
+    db = MySQLdb.connect(host="localhost", port=3306, user=argv[1],
+                         passwd=argv[2], db=argv[3], charset="utf8")
+    cur = db.cursor()
+    request = """
+SELECT * FROM states WHERE name LIKE BINARY '{}' ORDER BY states.id ASC"""
+    request = request.format(argv[4])
+    cur.execute(request)
+    rows = cur.fetchall()
+    for row in rows:
+        print(row)
+    cur.close()
+    db.close()
