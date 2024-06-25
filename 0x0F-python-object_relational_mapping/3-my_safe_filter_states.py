@@ -1,11 +1,19 @@
 #!/usr/bin/python3
-# Script that displays all values in the states table where name matches
-# the argument, safe from SQL injection.
+"""
+Module that connects to a MySQL database takes in arguent and displays all
+values in the states table where name matches the argument.
+"""
+
 
 import sys
 import MySQLdb
 
+
 def main():
+    """
+    Main function that connects to the MySQL database, and displays all
+    values in the states table where name matches the argument.
+    """
     # Retrieve arguments from the already created database
     mysql_username = sys.argv[1]
     mysql_password = sys.argv[2]
@@ -40,6 +48,7 @@ def main():
     # Close the cursor and the connection
     cursor.close()
     db.close()
+
 
 if __name__ == "__main__":
     main()
