@@ -1,10 +1,19 @@
 #!/usr/bin/python3
-# script that lists all states and filters only those that starts with N.
+"""
+Module that connects to a MySQL database and lists all states starting
+with N from the states table.
+"""
+
 
 import sys
 import MySQLdb
 
+
 def main():
+    """
+    Main function that connects to the MySQL database, and lists all starting
+    with N from the states table, and prints them.
+    """
     mysql_username = sys.argv[1]
     mysql_password = sys.argv[2]
     database_name = sys.argv[3]
@@ -22,7 +31,8 @@ def main():
     cursor = db.cursor()
 
     # Execute the SQL query
-    cursor.execute("SELECT id, name FROM states WHERE name LIKE 'N%' ORDER BY id ASC")
+    cursor.execute("SELECT id, name FROM states WHERE name
+                   LIKE 'N%' ORDER BY id ASC")
 
     # Fetch all the rows
     rows = cursor.fetchall()
@@ -34,6 +44,7 @@ def main():
     # Close the cursor and the connection
     cursor.close()
     db.close()
+
 
 if __name__ == "__main__":
     main()
