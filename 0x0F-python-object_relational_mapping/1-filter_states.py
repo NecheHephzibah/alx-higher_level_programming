@@ -11,8 +11,8 @@ import MySQLdb
 
 def main():
     """
-    Main function that connects to the MySQL database, and lists all starting
-    with N from the states table, and prints them.
+    Main function that connects to the MySQL database, and lists all states
+    starting with 'N' from the states table, and prints them.
     """
     mysql_username = sys.argv[1]
     mysql_password = sys.argv[2]
@@ -32,7 +32,7 @@ def main():
 
     # Execute the SQL query
     cursor.execute("SELECT id, name FROM states WHERE name
-                   LIKE 'N%' ORDER BY id ASC")
+                    LIKE 'N%' ORDER BY id ASC")
 
     # Fetch all the rows
     rows = cursor.fetchall()
