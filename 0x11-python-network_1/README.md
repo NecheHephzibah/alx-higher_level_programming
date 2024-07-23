@@ -1,0 +1,1 @@
+ This project deals with how we can  use python to make http requests using the modules requests and urllib. please make sure you read more about it as the video is just a basic intro that you can refer to.
