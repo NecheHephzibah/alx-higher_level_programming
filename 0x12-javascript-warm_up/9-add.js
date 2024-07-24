@@ -1,6 +1,13 @@
 #!/usr/bin/node
-function add(a, b) {
-  const n = a + b;
-  console.log(n);
-};
-add(Number(process.argv[2]), Number(process.argv[3]));
+/* addition of two integers */
+
+const mib = process.argv[2];
+const bim = process.argv[3];
+
+function add (a, b) {
+  return a + b;
+}
+const a = parseInt(mib);
+const b = parseInt(bim);
+
+console.log(add(a, b));

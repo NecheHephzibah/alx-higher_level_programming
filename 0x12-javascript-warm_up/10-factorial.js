@@ -1,11 +1,15 @@
 #!/usr/bin/node
-function factorial (n) {
-  if (n < 0) {
-    return (-1);
-  }
-  if (n == 0 || isNaN(n)) {
-    return (1); 
-  }
-  return (n * factorial(n - 1));
+/* a script that calulates and prints a factorial */
+let argument = parseInt(process.argv[2]);
+if (isNaN(argument)) {
+  argument = 1;
 }
-console.log(factorial(Number(process.argv[2])));
+
+function factorial (n) {
+  if (n === 1) {
+    return 1;
+  }
+  return n * factorial(n - 1);
+}
+
+console.log(factorial(argument));

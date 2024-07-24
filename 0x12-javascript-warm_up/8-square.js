@@ -1,12 +1,15 @@
 #!/usr/bin/node
-if (process.argv[2] === undefined ||
-    Number.isNaN(Number(process.argv[2]))) {
-  console .log('Missing size');
+/* a script that prints square */
+const size = process.argv[2];
+
+if (size === undefined || isNaN(parseInt(size))) {
+  console.log('Missing size');
 } else {
-  const x = parseInt(process.argv[2]);
-  let i = 0;
-  while (i < x) {
-    console.log('X'.repeat(x));
-    i++;
+  for (let l = 0; l < size; l++) {
+    let row = '';
+    for (let w = 0; w < size; w++) {
+      row += 'X';
+    }
+    console.log(row);
   }
 }
