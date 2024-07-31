@@ -16,8 +16,8 @@ request.get(url, (error, response, body) => {
         if (error) {
           console.log(error);
         } else {
-          const castNames = JSON.parse(body);
-          console.log(castNames.name);
+          const names = JSON.parse(body);
+          console.log(names.name);
         }
       });
     }
